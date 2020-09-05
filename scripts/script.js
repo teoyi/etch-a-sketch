@@ -13,4 +13,6 @@ function grid(row,col) {
     };
 };
 
-grid(10,10);
+let row = prompt("How many rows?");
+let col = prompt("How many columns?");
+grid(row,col);
