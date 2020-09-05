@@ -15,4 +15,15 @@ function grid(row,col) {
 
 let row = prompt("How many rows?");
 let col = prompt("How many columns?");
+
 grid(row,col);
+
+// function valid(input) {
+//     do {
+//         if (isNaN(input)) {
+//             break;
+//         } else {
+//             input = prompt("Sorry, that is not a valid number. Please try again!");
+//         }
+//     }
+//     while(!isNaN(input))
