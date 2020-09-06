@@ -8,22 +8,27 @@ function grid(row,col) {
         let box = document.createElement('div');
         box.style.color = 'black';
         box.innerText = (c+1);
+        box.setAttribute("id", "cell")
         container.appendChild(box).className = "grid-item";
         console.log(c)
     };
 };
 
+// Creating grid based on user input 
 let row = prompt("How many rows?");
 let col = prompt("How many columns?");
-
 grid(row,col);
 
-// function valid(input) {
-//     do {
-//         if (isNaN(input)) {
-//             break;
-//         } else {
-//             input = prompt("Sorry, that is not a valid number. Please try again!");
-//         }
-//     }
-//     while(!isNaN(input))
+
+// DOM for hover effect 
+const box = document.getElementById("cell");
+box.addEventListener("mouseover", darken, false);
+//box.addEventListener("mouseout", revert, false);
+
+function darken() {
+    box.setAttribute("style", "background-color: black;");
+}
+
+// function revert() {
+//     box.setAttribute("style", "background-color: white;");
+// }
