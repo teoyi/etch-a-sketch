@@ -7,6 +7,7 @@ body {
     flex-direction: column;
 }
 
+
 h1 {
     float: left;
     font-family: Arial, Helvetica, sans-serif;
@@ -21,7 +22,14 @@ h2 {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
+button {
+    border: solid 1px;
+    margin-top: 21px;
+    float: right;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+}
 :root {
     --grid-rows: 1;
     --grid-cols: 1;
