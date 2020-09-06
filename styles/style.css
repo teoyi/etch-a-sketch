@@ -41,7 +41,7 @@ button {
     grid-template-rows: repeat(var(--grid-rows), auto);
     grid-template-columns: repeat(var(--grid-cols), auto);
     height: 90vh;
-    width: 97vw;
+    width: 98vw;
 }
 
 .grid-item { 
