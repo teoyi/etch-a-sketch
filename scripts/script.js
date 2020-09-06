@@ -17,8 +17,9 @@ function grid(row,col) {
 
 // Initial Grid Load 
 grid(row,col);
+
 // Creating grid based on user input upon clicking resize
-const resize = document.querySelector(".resize")
+const resize = document.querySelector(".resize");
 
 function reSize() { 
     let row = prompt("How many rows?");
@@ -32,7 +33,8 @@ resize.addEventListener("click", function() {
     reSize();
 });
 
-
+// Clicking on draw button to enable hover effect 
+const draw = document.querySelector(".draw");
 
 // DOM for hover effect 
 const cells = document.querySelectorAll(".grid-item");
