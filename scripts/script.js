@@ -32,8 +32,8 @@ function reSize() {
     grid(row,col);
 }
 resize.addEventListener("click", function() {
-    draw.classList.remove("active");
-    color.classList.remove("active");
+    // draw.classList.remove("active");
+    // color.classList.remove("active");
     reSize();
 });
 
@@ -41,11 +41,20 @@ resize.addEventListener("click", function() {
 const draw = document.querySelector(".draw");
 
 // DOM for hover effect 
-const cells = document.querySelectorAll(".grid-item");
-console.log(cells.length)
-
-cells.forEach((cell) => {
-    cell.addEventListener("mouseenter", (e) => {
-        e.target.style.backgroundColor = "black";
+function drawBlack() {
+    cells = document.querySelectorAll(".grid-item");
+    cells.forEach((cell) => {
+        cell.addEventListener("mouseenter", (e) => {
+            e.target.style.backgroundColor = "black";
+        });
     });
-});
+};
+
+draw.addEventListener("click", function() {
+    drawBlack();
+})
+
+// button to clear all marks to white 
+const empty = document.querySelector(".clear");
+
+
