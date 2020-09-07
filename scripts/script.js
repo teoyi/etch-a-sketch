@@ -1,4 +1,6 @@
 const container = document.querySelector("#container");
+
+// Declaring initial parameter 
 let row = 10; 
 let col = 10;
 
@@ -30,6 +32,8 @@ function reSize() {
     grid(row,col);
 }
 resize.addEventListener("click", function() {
+    draw.classList.remove("active");
+    color.classList.remove("active");
     reSize();
 });
 
