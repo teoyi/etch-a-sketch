@@ -32,8 +32,9 @@ function reSize() {
     grid(row,col);
 }
 resize.addEventListener("click", function() {
-    // draw.classList.remove("active");
-    // color.classList.remove("active");
+    draw.classList.remove("active");
+    colorBtn.classList.remove("active");
+    clearGrid();
     reSize();
 });
 
