@@ -50,11 +50,39 @@ function drawBlack() {
     });
 };
 
+function drawWhite() {
+    cells = document.querySelectorAll(".grid-item");
+    cells.forEach((cell) => {
+        cell.addEventListener("mouseenter", (e) => {
+            e.target.style.backgroundColor = "white";
+        });
+    });
+};
+
 draw.addEventListener("click", function() {
-    drawBlack();
-})
+    if (draw.classList.contains("active")) {
+        draw.classList.remove("active");
+    } else { 
+        draw.classList.add("active");
+        cells = document.querySelectorAll(".grid-item");
+        cells.forEach((cell) => {
+            if (cell.backgroundColor === "white") {
+                drawBlack();
+            } else if (cell.backgroundColor === "black") {
+                drawWhite();
+            };
+        });
+    };
+});
 
 // button to clear all marks to white 
 const empty = document.querySelector(".clear");
+
+// function empty() {
+//     cells = document.querySelectorAll(".grid-item");
+//     cells.forEach((cell) => {
+//         cell.target.style.backgroundColor = "white";
+//     })
+// }
 
 
