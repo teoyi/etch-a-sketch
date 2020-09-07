@@ -21,7 +21,7 @@ function grid(row,col) {
 grid(row,col);
 
 // Creating grid based on user input upon clicking resize
-const resize = document.querySelector(".resize");
+const resize = document.querySelector(".resizeBtn");
 
 function reSize() { 
     let row = prompt("How many rows?");
@@ -38,7 +38,7 @@ resize.addEventListener("click", function() {
 });
 
 // Clicking on draw button to enable hover effect 
-const draw = document.querySelector(".draw");
+const draw = document.querySelector(".drawBtn");
 
 // DOM for hover effect 
 function drawBlack() {
@@ -64,25 +64,20 @@ draw.addEventListener("click", function() {
         draw.classList.remove("active");
     } else { 
         draw.classList.add("active");
-        cells = document.querySelectorAll(".grid-item");
-        cells.forEach((cell) => {
-            if (cell.backgroundColor === "white") {
-                drawBlack();
-            } else if (cell.backgroundColor === "black") {
-                drawWhite();
-            };
-        });
+        drawBlack();
     };
 });
 
 // button to clear all marks to white 
-const empty = document.querySelector(".clear");
+const clearBtn = document.querySelector(".clearBtn");
 
-// function empty() {
-//     cells = document.querySelectorAll(".grid-item");
-//     cells.forEach((cell) => {
-//         cell.target.style.backgroundColor = "white";
-//     })
-// }
+function clearGrid() {
+    cells = document.querySelectorAll(".grid-item");
+    cells.forEach((cell) => {
+        cell.style.backgroundColor = "white";
+    })
+};
+
+clearBtn.addEventListener("click", clearGrid);
 
 
