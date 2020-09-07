@@ -37,6 +37,12 @@ button {
     color: white;
 }
 
+.colorBtn.active, .colorbtn:active {
+    background: purple;
+    text-decoration: none;
+    color: black;
+}
+
 :root {
     --grid-rows: 1;
     --grid-cols: 1;

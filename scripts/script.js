@@ -40,7 +40,6 @@ resize.addEventListener("click", function() {
 // Clicking on draw button to enable hover effect 
 const draw = document.querySelector(".drawBtn");
 
-// DOM for hover effect 
 function drawBlack() {
     cells = document.querySelectorAll(".grid-item");
     cells.forEach((cell) => {
@@ -50,21 +49,48 @@ function drawBlack() {
     });
 };
 
-function drawWhite() {
-    cells = document.querySelectorAll(".grid-item");
-    cells.forEach((cell) => {
-        cell.addEventListener("mouseenter", (e) => {
-            e.target.style.backgroundColor = "white";
-        });
-    });
-};
-
 draw.addEventListener("click", function() {
     if (draw.classList.contains("active")) {
         draw.classList.remove("active");
     } else { 
+        if (colorBtn.classList.contains("active")) {
+            colorBtn.classList.remove("active");
+        }
         draw.classList.add("active");
         drawBlack();
+    };
+});
+
+// Clicking on color will enable drawing with color instead of black 
+const colorBtn = document.querySelector(".colorBtn");
+
+function randomColorGen() {
+    let letters = "0123456789ABCDEF";
+    let color = "#";
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+} 
+
+function drawColor() {
+    cells = document.querySelectorAll(".grid-item");
+    cells.forEach((cell) => {
+        cell.addEventListener("mouseenter", (e) => {
+            e.target.style.backgroundColor = randomColorGen();
+        })
+    })
+}
+
+colorBtn.addEventListener("click", function() {
+    if (colorBtn.classList.contains("active")) {
+        colorBtn.classList.remove("active");
+    } else {
+        if (draw.classList.contains("active")) {
+            draw.classList.remove("active");
+        }
+        colorBtn.classList.add("active");
+        drawColor();
     };
 });
 
