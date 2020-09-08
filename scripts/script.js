@@ -1,5 +1,5 @@
 const container = document.querySelector("#container");
-
+alert('\t\t\tInstructions\n\nWelcome to Pseudo Etch-A-Sketch!\nTo begin drawing, select "draw" or "color"!')
 // Declaring initial parameter 
 let row = 10; 
 let col = 10;
